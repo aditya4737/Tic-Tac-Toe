@@ -19,6 +19,7 @@ function CheckWin() {
     Winner.forEach(e => {
         if (BoxTexts[e[0]].innerText === BoxTexts[e[1]].innerText && BoxTexts[e[1]].innerText === BoxTexts[e[2]].innerText && BoxTexts[e[0]].innerText !== " "&&BoxTexts[e[0]].innerText !== "") {
             document.querySelector('.game-score').innerText = BoxTexts[e[0]].innerText + " WON!!!";
+            winnerAudio.play();
             win = 1;
         }
     });
