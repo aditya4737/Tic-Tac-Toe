@@ -2,6 +2,7 @@
 let ClickAudio = new Audio("click.wav");
 let winnerAudio = new Audio("success-1-6297.mp3");
 let resetAudio = new Audio("reset audio.mp3");
+let WinGif = "winnergif-unscreen.gif";
 let ClickCount = 1;
 let win = 0;
 function CheckWin() {
@@ -21,6 +22,7 @@ function CheckWin() {
             winnerAudio.play();
             document.querySelector('.game-score').innerText = BoxTexts[e[0]].innerText + " WON!!!";
             document.querySelector(".info").innerText = "";
+            document.querySelector(".gif").setAttribute("src", WinGif);
             win = 1;
         }
     });
