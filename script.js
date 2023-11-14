@@ -20,6 +20,7 @@ function CheckWin() {
         if (BoxTexts[e[0]].innerText === BoxTexts[e[1]].innerText && BoxTexts[e[1]].innerText === BoxTexts[e[2]].innerText && BoxTexts[e[0]].innerText !== " "&&BoxTexts[e[0]].innerText !== "") {
             winnerAudio.play();
             document.querySelector('.game-score').innerText = BoxTexts[e[0]].innerText + " WON!!!";
+            document.querySelector(".info").innerText = "";
             win = 1;
         }
     });
@@ -46,7 +47,10 @@ for (var i = 0; i < 9; i++) {
             this.querySelector(".boxtext").innerText = "O";
             document.querySelector(".info").innerText = "Turn for X";
         }
-            CheckWin();
+        CheckWin();
+        if(win===1){
+            popup();
+        }
         ClickCount++;
     });
 }
